@@ -20,7 +20,7 @@ struct ContentView: View {
                     .font(.title)
                     .foregroundStyle(.black)
                     .fontDesign(.monospaced)
-                NavigationLink(destination: StartGame()) {
+                NavigationLink(destination: StartGame(model: Model())) {
                     Text("Start Game")
                         .tint(.black)
                         .font(.title)

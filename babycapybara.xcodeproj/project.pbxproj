@@ -12,6 +12,8 @@
 		54AF9B372CCE4D1D00135679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54AF9B362CCE4D1D00135679 /* Assets.xcassets */; };
 		54AF9B3A2CCE4D1D00135679 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54AF9B392CCE4D1D00135679 /* Preview Assets.xcassets */; };
 		54AF9B412CCE4F2F00135679 /* StartGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF9B402CCE4F2F00135679 /* StartGame.swift */; };
+		54AF9B432CCE8F7300135679 /* PlayGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF9B422CCE8F7300135679 /* PlayGround.swift */; };
+		54AF9B452CCE910B00135679 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF9B442CCE910B00135679 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		54AF9B362CCE4D1D00135679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54AF9B392CCE4D1D00135679 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		54AF9B402CCE4F2F00135679 /* StartGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGame.swift; sourceTree = "<group>"; };
+		54AF9B422CCE8F7300135679 /* PlayGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGround.swift; sourceTree = "<group>"; };
+		54AF9B442CCE910B00135679 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 				54AF9B362CCE4D1D00135679 /* Assets.xcassets */,
 				54AF9B382CCE4D1D00135679 /* Preview Content */,
 				54AF9B402CCE4F2F00135679 /* StartGame.swift */,
+				54AF9B422CCE8F7300135679 /* PlayGround.swift */,
+				54AF9B442CCE910B00135679 /* Model.swift */,
 			);
 			path = babycapybara;
 			sourceTree = "<group>";
@@ -140,6 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54AF9B452CCE910B00135679 /* Model.swift in Sources */,
+				54AF9B432CCE8F7300135679 /* PlayGround.swift in Sources */,
 				54AF9B352CCE4D1B00135679 /* ContentView.swift in Sources */,
 				54AF9B412CCE4F2F00135679 /* StartGame.swift in Sources */,
 				54AF9B332CCE4D1B00135679 /* babycapybaraApp.swift in Sources */,

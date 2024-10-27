@@ -9,83 +9,82 @@ import SwiftUI
 
 struct StartGame: View {
     
-   @State private var characterNum = 1
-   @State private var greetings: String = "Welcome"
+    @ObservedObject var model: Model  // Use @ObservedObject to observe changes
     
     var body: some View {
-       
-        VStack{
-            Image("\(characterNum)")
-                .resizable()
-                .frame(width: 100, height: 100)
-                .padding()
-            
-            ZStack {
-            Text("\(greetings)")
-                    .multilineTextAlignment(.center)
-                    .bold()
-                .padding()
-                .padding()
-                .frame(width: 240, height: 160)
-                .font(.title2)
-                .fontDesign(.monospaced)
-                .background(Color.yellow)
-                .cornerRadius(15)
-                
-                
-          
-                HStack {
-                    Button(action: {
-                        if characterNum > 1 {
-                            characterNum -= 1
-                        }
-                    }) {
-                        Image(systemName: "arrowtriangle.left.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.yellow)
-                            .cornerRadius(5)
-                    }
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        if characterNum < 6 {
-                            characterNum += 1
-                        }
-                    }) {
-                        Image(systemName: "arrowtriangle.right.fill")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.yellow)
-                            .cornerRadius(5)
-                    }
-                    
-                }
-            }.padding()
-            
-            Button(action: {}) {
-                Text("GO")
+        NavigationStack {
+            VStack{
+                Image("\(model.characterNum)")
+                    .resizable()
+                    .frame(width: 150, height: 135)
                     .padding()
-                    .frame(width: 80, height: 80, alignment: .center)
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .fontDesign(.monospaced)
-                    .font(.headline)
-                    .cornerRadius(10)
-                    .bold()
-            }.padding()
-            // jump alert "u sure ur beginner look? you can change later."
-        }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                greetings = "Choose\nYour Warrior"
+                
+                ZStack {
+                    Text("\(model.greetings)")
+                        .multilineTextAlignment(.center)
+                        .bold()
+                        .padding()
+                        .padding()
+                        .frame(width: 240, height: 160)
+                        .font(.title2)
+                        .fontDesign(.monospaced)
+                        .background(Color.yellow)
+                        .cornerRadius(15)
+                    
+                    
+                    
+                    HStack {
+                        Button(action: {
+                            if model.characterNum > 1 {
+                                model.characterNum -= 1
+                            }
+                        }) {
+                            Image(systemName: "arrowtriangle.left.fill")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.yellow)
+                                .cornerRadius(5)
+                        }
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            if model.characterNum < 6 {
+                                model.characterNum += 1
+                            }
+                        }) {
+                            Image(systemName: "arrowtriangle.right.fill")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                                .foregroundColor(.yellow)
+                                .cornerRadius(5)
+                        }
+                        
+                    }
+                }.padding()
+                
+                NavigationLink(destination: PlayGround()){
+                    Text("GO")
+                        .frame(width: 80, height: 80, alignment: .center)
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .fontDesign(.monospaced)
+                        .font(.headline)
+                        .cornerRadius(10)
+                        .padding()
+                }
+                // jump alert "u sure ur beginner look? you can change later."
+            }
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    model.greetings = "Choose\nYour Warrior"
+                }
             }
         }
+        .navigationBarBackButtonHidden(true) // Hides the back button
     }
-    
 }
 
 #Preview {
-    StartGame()
+    StartGame(model: Model())
 }
