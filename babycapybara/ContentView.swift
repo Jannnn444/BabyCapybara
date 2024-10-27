@@ -20,15 +20,16 @@ struct ContentView: View {
                     .font(.title)
                     .foregroundStyle(.black)
                     .fontDesign(.monospaced)
-                
-                Text("Start Game")
-                    .tint(.black)
-                    .font(.title)
-                    .padding()
-                    .fontDesign(.monospaced)
-                    .background(Color.yellow)
-                    .cornerRadius(15)
-                    .padding(.top, 80)
+                NavigationLink(destination: StartGame()) {
+                    Text("Start Game")
+                        .tint(.black)
+                        .font(.title)
+                        .padding()
+                        .fontDesign(.monospaced)
+                        .background(Color.yellow)
+                        .cornerRadius(15)
+                        .padding(.top, 80)
+                }
             }
             .padding()
         }
