@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct PlayGround: View {
+    @ObservedObject var model: Model
+    
     var body: some View {
         VStack {
-            Text("Hello, World!")
+            Image("\(model.characterNum)")
+                .resizable()
+                .frame(width: 150, height: 135)
+                .padding()
         }.onAppear{
-            
+            //update model.characterNum
         }
         .navigationBarBackButtonHidden(true) // Hides the back button
     }
@@ -20,5 +25,5 @@ struct PlayGround: View {
 }
 
 #Preview {
-    PlayGround()
+    PlayGround(model: Model())
 }

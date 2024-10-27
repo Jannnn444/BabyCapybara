@@ -10,7 +10,7 @@ import SwiftUI
 struct StartGame: View {
     
     @ObservedObject var model: Model  // Use @ObservedObject to observe changes
-    
+  
     var body: some View {
         NavigationStack {
             VStack{
@@ -37,6 +37,7 @@ struct StartGame: View {
                         Button(action: {
                             if model.characterNum > 1 {
                                 model.characterNum -= 1
+                                print("My number: \(model.characterNum)")
                             }
                         }) {
                             Image(systemName: "arrowtriangle.left.fill")
@@ -51,6 +52,7 @@ struct StartGame: View {
                         Button(action: {
                             if model.characterNum < 6 {
                                 model.characterNum += 1
+                                print("My number: \(model.characterNum)")
                             }
                         }) {
                             Image(systemName: "arrowtriangle.right.fill")
@@ -63,7 +65,7 @@ struct StartGame: View {
                     }
                 }.padding()
                 
-                NavigationLink(destination: PlayGround()){
+                NavigationLink(destination: PlayGround(model: Model())){
                     Text("GO")
                         .frame(width: 80, height: 80, alignment: .center)
                         .background(Color.blue)
@@ -84,6 +86,7 @@ struct StartGame: View {
         .navigationBarBackButtonHidden(true) // Hides the back button
     }
 }
+
 
 #Preview {
     StartGame(model: Model())

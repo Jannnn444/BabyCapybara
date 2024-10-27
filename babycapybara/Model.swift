@@ -13,3 +13,4 @@ class Model: ObservableObject {
     @Published var greetings: String = "Welcome"
     
 }
+
