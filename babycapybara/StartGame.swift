@@ -10,7 +10,8 @@ import SwiftUI
 struct StartGame: View {
     
     @ObservedObject var model: Model  // Use @ObservedObject to observe changes
-  
+    @State var myChoice: Int = 1
+    
     var body: some View {
         NavigationStack {
             VStack{
@@ -52,6 +53,7 @@ struct StartGame: View {
                         Button(action: {
                             if model.characterNum < 6 {
                                 model.characterNum += 1
+                                myChoice = model.characterNum
                                 print("My number: \(model.characterNum)")
                             }
                         }) {
@@ -65,7 +67,7 @@ struct StartGame: View {
                     }
                 }.padding()
                 
-                NavigationLink(destination: PlayGround(model: Model())){
+                NavigationLink(destination: PlayGround(model: Model(characterNum: myChoice))){
                     Text("GO")
                         .frame(width: 80, height: 80, alignment: .center)
                         .background(Color.blue)
@@ -88,6 +90,4 @@ struct StartGame: View {
 }
 
 
-#Preview {
-    StartGame(model: Model())
-}
+ail.com"

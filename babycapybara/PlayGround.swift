@@ -24,6 +24,6 @@ struct PlayGround: View {
         
 }
 
-#Preview {
-    PlayGround(model: Model())
-}
+//#Preview {
+//    PlayGround(model: Model(characterNum: 1))
+//}

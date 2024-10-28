@@ -9,8 +9,14 @@ import Foundation
 import SwiftUI
 
 class Model: ObservableObject {    
-    @Published var characterNum = 1
-    @Published var greetings: String = "Welcome"
+    @Published var characterNum: Int
+    @Published var greetings: String
+    
+    
+    init(characterNum: Int, greetings: String = "Welcome") {
+        self.characterNum = characterNum
+        self.greetings = greetings
+    }
     
 }
 
